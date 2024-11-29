@@ -26,6 +26,7 @@ const addEmployee = async (req, res) => {
   const { Name, Gender, Position, Id, phoneNumber, email, Picture } = req.body;
 
   if (!Name || !Gender || !Position || !Id || !phoneNumber || !email || !Picture) {
+    console.log("Validation failed:", { Name, Gender, Position, Id, phoneNumber, email, Picture });
     return res.status(400).json({ message: "All fields are required" });
   }
 
