@@ -7,7 +7,7 @@ const authRoutes = require("./routes/auth")
 app.use(cors({
     origin: '*',  
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true
+    credentials: false
 }));
 
 
