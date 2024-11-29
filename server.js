@@ -14,8 +14,6 @@ app.use(express.json()) ;
 app.use('/api' , dbRoutes)
 app.use('/api', authRoutes)  
 
-console.log("Incoming Request Body:", req.body);
-
 
 app.listen(5000,  ()=>{
     console.log('Server is running on port http://localhost:5000')

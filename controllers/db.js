@@ -55,7 +55,7 @@ const addEmployee = async (req, res) => {
 
 const updateEmployee = async (req, res) => {
   const { id } = req.params;
-  const { Name, email, Gender, phoneNumber, IdNumber, Position } = req.body;
+  const { Name, email, Gender, phoneNumber,Position } = req.body;
 
   try {
     const employeeDocRef = doc(db, "employees", id);
@@ -65,7 +65,6 @@ const updateEmployee = async (req, res) => {
       email,
       Gender,
       phoneNumber,
-      IdNumber,
       Position,
     };
 
