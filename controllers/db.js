@@ -29,6 +29,7 @@ const addEmployee = async (req, res) => {
     return res.status(400).json({ message: "All fields are required" });
   }
 
+  console.log("Request Body:", req.body);
   try {
     const docRef = await addDoc(collection(db, "employees"), {
       Name: Name,
@@ -50,9 +51,10 @@ const addEmployee = async (req, res) => {
 };
 
 
+
 const updateEmployee = async (req, res) => {
   const { id } = req.params;
-  const { Name, email, Gender, phoneNumber, Id, Position } = req.body;
+  const { Name, email, Gender, phoneNumber, IdNumber, Position } = req.body;
 
   try {
     const employeeDocRef = doc(db, "employees", id);
@@ -62,11 +64,9 @@ const updateEmployee = async (req, res) => {
       email,
       Gender,
       phoneNumber,
-      Id,
+      IdNumber,
       Position,
     };
-
-   
 
     await updateDoc(employeeDocRef, updateData);
 
